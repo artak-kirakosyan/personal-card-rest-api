@@ -9,9 +9,7 @@ class PersonalCardViewSet(viewsets.ModelViewSet):
     """
     Endpoints for interacting with personal cards
     """
-    queryset = PersonalCard.objects.all().order_by(
-        "last_name", "name", "middle_name"
-    )
+    queryset = PersonalCard.objects.all()
     serializer_class = PersonalCardSerializer
 
     def create(self, request, *args, **kwargs):
