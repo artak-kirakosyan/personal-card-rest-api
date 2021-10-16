@@ -1,12 +1,8 @@
-import logging
-
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
 from api.models import PersonalCard
 from api.serializers import PersonalCardSerializer
-
-logger = logging.getLogger("django.personal_card.views")
 
 
 class PersonalCardViewSet(viewsets.ModelViewSet):
@@ -23,7 +19,6 @@ class PersonalCardViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         personal_card = PersonalCard.objects.filter(
             **serializer.validated_data).first()
-        logger.info("Personal_card: %s" % repr(personal_card))
         if personal_card is not None:
             serializer = self.get_serializer(personal_card)
             data = serializer.data
