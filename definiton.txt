@@ -1,0 +1,22 @@
+Defining Personal Card as entity of:
+
+Name (Mandatory value)
+Middle Name (Optional Value)
+Last Name (Mandatory value)
+Age (Mandatory, must be meaningful for a living person)
+Gender (Mandatory, Any of Male/Female)
+Vaccinated (Any of Yes/No, default value is No)
+
+Create a REST endpoint processing two requests:
+a) Accept Personal Card information and add it to database table, if does not exist. Each record in table must also have a unique id provided by database.
+If record already exists, it should not be added to the table. In any case, the endpoint must return proper HTML status code and personal card entry (along with its unique id) – either newly created or already existing.
+b) Return list of all personal cards found it database table, ordered by Last name, Name, Middle Name in ascending order.
+
+Endpoint must provide incoming data validation, comprehensive diagnostics and correct HTML status codes.
+Test data must be provided, which will illustrate service’s work on correct and faulty input data.
+Database tool and implementation methodology is up to candidate’s choice.
+Validation toolkit is up to candidate’s choice.
+Web/REST framework is up to candidate’s choice (Django is highly preferred though)
+Containerization of the service is up to candidate’s choice.
+
+Result is accepted as an archive of a project (with README file and requirements list for external python packages, if any, test data).
