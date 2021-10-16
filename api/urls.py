@@ -1,12 +1,11 @@
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
 
 from api import views
 
-router = routers.DefaultRouter()
-
-router.register(r"personal_card", views.PersonalCardViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path(
+        'personal_card/', views.PersonalCardViewSet.as_view(
+            {"get": "list", "post": "create"})
+    ),
 ]
